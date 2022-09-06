@@ -8,9 +8,9 @@ from slave import (
 )
 
 
-class XenialSlaveDeploymentTest(SlaveDeploymentTest, TestCase):
+class JammySlaveDeploymentTest(SlaveDeploymentTest, TestCase):
 
-    spec = SlaveDeploymentSpec(series="xenial")
+    spec = SlaveDeploymentSpec(series="jammy")
 
 
 if __name__ == "__main__":

@@ -18,9 +18,7 @@ tags:
   - ops
 subordinate: false
 series:
-  - xenial
-  - bionic
-  - focal
+  - jammy
 provides:
   website:
     interface: http

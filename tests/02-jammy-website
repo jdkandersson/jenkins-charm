@@ -8,9 +8,9 @@ from website import (
 )
 
 
-class XenialWebsiteDeploymentTest(WebsiteDeploymentTest, TestCase):
+class JammyWebsiteDeploymentTest(WebsiteDeploymentTest, TestCase):
 
-    spec = WebsiteDeploymentSpec(series="xenial", storage=False)
+    spec = WebsiteDeploymentSpec(series="jammy", storage=False)
 
 
 if __name__ == "__main__":

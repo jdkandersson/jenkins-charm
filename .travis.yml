@@ -2,13 +2,11 @@ sudo: required
 
 matrix:
     include:
-        - dist: xenial
-        - dist: bionic
-        - dist: focal
+        - dist: jammy
 
 language: python
 python:
- - '3.5'
+ - '3.10'
 
 install:
  - pip install tox

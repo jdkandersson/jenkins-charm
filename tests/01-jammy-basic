@@ -8,9 +8,9 @@ from basic import (
 )
 
 
-class XenialBasicDeploymentTest(BasicDeploymentTest, TestCase):
+class JammyBasicDeploymentTest(BasicDeploymentTest, TestCase):
 
-    spec = BasicDeploymentSpec(series="xenial")
+    spec = BasicDeploymentSpec(series="jammy")
 
 
 if __name__ == "__main__":

@@ -13,7 +13,7 @@ AMULET_HTTP_PROXY environment variable to the http URL of the proxy server.
 
 To run tests first build the charm then, the recommended way to run tests is
 via bundletester, https://github.com/juju-solutions/bundletester. Tests can
-also be run directly, ie `./tests/01-xenial-basic`.
+also be run directly, ie `./tests/01-jammy-basic`.
 
 For debugging and test development purposes, all code should be idempotent.
 In other words, the code should have the ability to be re-run without changing

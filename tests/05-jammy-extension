@@ -4,9 +4,9 @@ from unittest import TestCase, main
 from extension import ExtensionDeploymentSpec, ExtensionDeploymentTest
 
 
-class XenialExtensionDeploymentTest(ExtensionDeploymentTest, TestCase):
+class JammyExtensionDeploymentTest(ExtensionDeploymentTest, TestCase):
 
-    spec = ExtensionDeploymentSpec(series="xenial")
+    spec = ExtensionDeploymentSpec(series="jammy")
 
 
 if __name__ == "__main__":

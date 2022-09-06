@@ -4,8 +4,7 @@ TIMEOUT = 1800
 
 
 class DeploymentSpec(object):
-
-    def __init__(self, series="xenial", storage=True):
+    def __init__(self, series="jammy", storage=True):
         self.series = series
         self.storage = storage
         self.deployment = Deployment(series=self.series)

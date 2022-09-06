@@ -8,9 +8,9 @@ from nrpe import (
 )
 
 
-class XenialNRPEDeploymentTest(NRPEDeploymentTest, TestCase):
+class JammyNRPEDeploymentTest(NRPEDeploymentTest, TestCase):
 
-    spec = NRPEDeploymentSpec(series="xenial")
+    spec = NRPEDeploymentSpec(series="jammy")
 
 
 if __name__ == "__main__":
