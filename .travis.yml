@@ -2,7 +2,7 @@ sudo: required
 
 matrix:
     include:
-        - dist: jammy
+        - dist: focal
 
 language: python
 python:

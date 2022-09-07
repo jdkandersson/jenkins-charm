@@ -18,7 +18,7 @@ tags:
   - ops
 subordinate: false
 series:
-  - jammy
+  - focal
 provides:
   website:
     interface: http

@@ -14,13 +14,11 @@ PLUGINS_DIR = "/var/lib/jenkins/plugins"
 
 
 class BasicDeploymentSpec(DeploymentSpec):
-
-    def jenkins_url(self, prefix='/'):
+    def jenkins_url(self, prefix="/"):
         """Get the URL of the Jenkins master."""
-        return "http://{}:8080{}".format(self.jenkins.info["public-address"],
-                                         prefix)
+        return "http://{}:8080{}".format(self.jenkins.info["public-address"], prefix)
 
-    def jenkins_client(self, password=PASSWORD, prefix='/'):
+    def jenkins_client(self, password=PASSWORD, prefix="/"):
         """Return a client for the Jenkins server under test."""
         return Jenkins(self.jenkins_url(prefix), "admin", password)
 
@@ -35,7 +33,7 @@ class BasicDeploymentSpec(DeploymentSpec):
         plugins = []
         for name in contents["files"]:
             if name.endswith(".hpi"):
-                plugins.append(name[:-len(".hpi")])
+                plugins.append(name[: -len(".hpi")])
         return plugins
 
     def _init_00_basic(self):
@@ -51,8 +49,7 @@ class BasicDeploymentSpec(DeploymentSpec):
         # Specify charm_name because this layer could be named something
         # else.
         if self.storage:
-            self.deployment.add(charm_name, units=1,
-                                storage={"jenkins": "rootfs,50M"})
+            self.deployment.add(charm_name, units=1, storage={"jenkins": "rootfs,50M"})
         else:
             self.deployment.add(charm_name, units=1)
         self.deployment.configure(charm_name, self.jenkins_config)
@@ -63,7 +60,6 @@ class BasicDeploymentSpec(DeploymentSpec):
 
 
 class BasicDeploymentTest(DeploymentTest):
-
     def test_00_workload_status(self):
         """Validate initial workload status."""
         status = self.spec.jenkins.info["workload-status"]
@@ -145,14 +141,14 @@ class BasicDeploymentTest(DeploymentTest):
         self.spec.deployment.configure(charm_name, {"public-url": public_url})
         self.spec.deployment.sentry.wait()
 
-        client = self.spec.jenkins_client(prefix='/jenkins-alt')
+        client = self.spec.jenkins_client(prefix="/jenkins-alt")
         try:
             user = client.get_whoami()
         except:
             self.fail("Can't access Jenkins API")
         self.assertEqual("admin", user["id"], "Unexpected user ID")
-        client_url = client.get_info()['views'][0]['url']
-        self.assertEqual(client_url, public_url + '/')
+        client_url = client.get_info()["views"][0]["url"]
+        self.assertEqual(client_url, public_url + "/")
 
         self.spec.deployment.configure(charm_name, {"public-url": ""})
         self.spec.deployment.sentry.wait()

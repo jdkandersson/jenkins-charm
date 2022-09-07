@@ -18,7 +18,7 @@ from jenkins_plugin_manager.core import JenkinsCore
 #     can be safely ignored since we're stubbing out these objects).
 apt = try_import("charms.apt")
 
-APT_DEPENDENCIES = {"jammy": ["daemon", "openjdk-8-jre-headless"]}
+APT_DEPENDENCIES = {"focal": ["daemon", "openjdk-8-jre-headless"]}
 APT_SOURCE = "deb http://pkg.jenkins.io/%s binary/"
 
 
